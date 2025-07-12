@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Wishify</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #bfbfbf;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-card {
+      background-color: #fff;
+      padding: 50px 40px;
+      width: 420px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(255, 1, 1, 0.926);
+      position: relative;
+    }
+
+    .login-card h2 {
+      text-align: center;
+      color: #ff7a00;
+      font-size: 28px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .login-card form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .login-card label {
+      font-weight: 600;
+      font-size: 14px;
+      margin: 10px 0 5px;
+    }
+
+    .login-card input {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #999;
+      outline: none;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .login-card button {
+      margin-top: 15px;
+      padding: 12px;
+      background-color: #ff7a00;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+
+    .login-card .register-link {
+      text-align: right;
+      font-size: 12px;
+      margin-top: 15px;
+    }
+
+    .login-card .register-link a {
+      color: #ff7a00;
+      font-weight: 500;
+    }
+     .login a{
+      color: white;
+      text-decoration: none;
+     }
+
+  </style>
+</head>
+<body>
+ {% if get_flashed_messages() %}
+    <script>
+      {% for message in get_flashed_messages() %}
+        alert("{{ message }}");
+      {% endfor %}
+    </script>
+  {% endif %}
+</body>
+</html>
+
+  <div class="login-card">
+    <h2>LOGIN</h2>
+    <form method="post">
+      <label>Email</label>
+      <input name = "check_email" type="email" placeholder="Enter Your Email here" required />
+
+      <label>Password</label>
+      <input name = "check_password" type="password" placeholder="Please Enter Your Password here" required />
+
+      <button class = "login" type="submit">Login</a></button>
+    </form>
+    <p class="register-link">
+      if you havn't Registed yet ? <a href="{{ url_for('rendering_singnup_page') }}">Register Now</a>
+    </p>
+  </div>
+
+</body>
+</html>

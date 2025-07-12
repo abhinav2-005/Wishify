@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up | Wishify</title>
+</head>
+    {% if error %}
+      <script>alert("{{ error }}");</script>
+    {% endif %}
+
+    <style>
+body {
+  background-color: #bfbfbf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-card {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 5px 15px rgba(255, 1, 1, 0.926);
+}
+
+.signup-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-card label {
+  margin: 10px 0 5px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.signup-card input {
+  padding: 12px;
+  border: 1px solid #999;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.signup-card button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #ff7a00;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.login-link {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.login-link a {
+  color: #ff7a00;
+}
+
+    </style>
+    <div class="signup-card">
+      <p><h2 style="text-align: center;color: #de710b;">Welcome to Wishify <br>SIGN-UP</h2></p>
+      <form method="post">
+        <label>Name</label>
+        <input name = "name" type="text" placeholder="Enter Your Name" />
+
+        <label>Email</label>
+        <input name = "email" type="email" placeholder="Please Enter Your Email" />
+
+        <label>Password</label>
+        <input name = "password" type="password" placeholder="Please Enter Your Password" />
+
+        <label>Confirm Password</label>
+        <input name = "confirm_password" type="password" placeholder="Please Re Enter Your Password" />
+
+        <button type="submit">Sign-up</button>
+      </form>
+      <p class="login-link">if you already have an account? <a href="{{ url_for('rendering_login_page') }}">Login Now</a></p>
+    </div>
+<body>
+</body>
+</html>

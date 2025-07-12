@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Item - Wishify</title>
+  <style>
+    body {
+      background: #bfbfbf;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      width: 350px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(255, 1, 1, 0.926);
+
+    }
+
+    .back-btn {
+      background-color: #ff7a00;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+
+    .save-btn {
+      width: 100%;
+      background: #ff7a00;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .save-btn:hover {
+      background: #e56700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="{{ url_for('home_page') }}"><button class="back-btn">Back</button></a>
+    <h1>Add Items</h1>
+    <form method="POST">
+      <input type="text" name="name" placeholder="Enter Name" required />
+      <input type="date" name="date" required />
+      <input type="email" name="Email" placeholder="recipient email" required />
+      <input type="text" name="wish_type" placeholder="e.g., Birthday, marriageday" required />
+      <button type="submit" class="save-btn">Save</button>
+    </form>
+  </div>
+</body>
+</html>
